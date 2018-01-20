@@ -120,6 +120,7 @@ def start_hosting():
                         game.player_2_socket = conn
 
     initialize_sockets()
+    socket_daemon()
 
 
 if __name__ == '__main__':
