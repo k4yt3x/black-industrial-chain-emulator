@@ -20,6 +20,7 @@ import socket
 import time
 import traceback
 
+WINNING_AMOUNT = 30000
 TIME_LIMIT = 30
 GAME_SESSIONS = []
 ONLINE_PLAYERS = []
@@ -78,6 +79,18 @@ class new_session:
         """
         Decrement busy days by one everyday
         """
+
+        # Each hacked server will generate $50 for
+        # the hacker every day
+        for server in self.servers:
+            if server.owner == self.player_1_id:
+                self.player_1.money += 50
+            elif server.owner == self.player_2_id:
+                self.player_2.money += 50
+        if self.player_1.money >= WINNING_AMOUNT:
+            print('Hacker 1 Won!')
+        if self.player_2.money >= WINNING_AMOUNT:
+            print('Hacker 2 Won!')
         if self.player_1.busy > 0:
             self.player_1.busy -= 1
         if self.player_2.busy > 0:
@@ -124,6 +137,11 @@ def start_hosting():
 
 
 if __name__ == '__main__':
-    start_hosting()
+    try:
+        start_hosting()
+    except Exception:
+        # This will grab and print the error
+        # Nothing else at this point for fail-safe handling
+        traceback.print_exc()
 else:
     print("This file cannot be imported")
