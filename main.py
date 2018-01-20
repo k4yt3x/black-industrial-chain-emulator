@@ -11,7 +11,7 @@ Description: Hackers class for game HTC
 This class defines basic attributes and actions
 for hackers.
 """
-
+exit(0)
 from servers import Servers
 from hacker import Hacker
 from worldmap import Worldmap
@@ -170,7 +170,6 @@ def start_hosting():
     socket_daemon()
 
 if __name__ == '__main__':
-    exit(0)
     try:
         start_hosting()
     except Exception:
