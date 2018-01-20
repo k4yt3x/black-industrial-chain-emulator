@@ -38,5 +38,5 @@ class Servers:
     def takeover(self, player_id):
         self.owner = player_id
 
-    def add_downtime(self, days):
+    def set_downtime(self, days):
         self.down = days
