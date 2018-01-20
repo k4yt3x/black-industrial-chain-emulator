@@ -10,10 +10,18 @@ Description: Servers class initializes a list of servers
 """
 
 
-class servers:
+class Servers:
 
-    def __init__(self):
-        self.servers = []
-        for srv in range(15):
-            # server_id, server_status, down
-            self.servers.append([srv, 0, 0])
+    def __init__(self, server_id, player_1_id, player_2_id):
+        self.server_id = server_id
+        self.player_1_id = player_1_id
+        self.player_2_id = player_2_id
+
+    def server_id(self):
+        return self.id
+
+    def server_status(self):
+        return self.player
+
+    def DDoS(self):
+        return self.days 
