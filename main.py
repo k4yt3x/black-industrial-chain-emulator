@@ -14,8 +14,10 @@ for hackers.
 
 from servers import Servers
 from hacker import Hacker
-# from worldmap import Map
+from worldmap import Worldmap
 # from manager import Manager
+
+TIME_LIMIT = 30
 
 
 class new_session:
@@ -27,11 +29,14 @@ class new_session:
     def setup_session(self):
         self.player_1 = Hacker()
         self.player_2 = Hacker()
+        self.servers = []
         for srv in range(15):
             self.servers.append(Servers(srv))
+        self.wmap = Worldmap(self.servers)
 
     def game_start(self):
-        pass
+        for day in range(30):
+            self.cycle_day()
 
     def cycle_day(self):
         if self.player_1.busy > 0:
