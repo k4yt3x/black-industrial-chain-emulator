@@ -52,7 +52,6 @@ class asciiMap():
     def get_status(self):
         return self.server0.state
 
-    
-    #def print_map(self):
-        #area = "...................." + self.server0.status + "......\n..........." + server1 + "...............\n....." + server2 + ".....................\n...........................\n........." + server3 + ".........." + server4 + "......\n..." + server5 + ".........." + server6 + "............\n......" + server7 + "..........." + server8 + "........\n.........................." + server9 + "\n...........................\n...........................\n.." + server10 + "..........." + server11 + server12 + "...........\n............" + server13 + "........" + server14 + "...." + server15 + "\n"
-        #print(self.area)
+    def get_map_state(self):
+        area = "...................." + self.server0.state + "......\n..........." + self.server1.state + "...............\n....." + self.server2.state + ".....................\n...........................\n........." + self.server3.state + ".........." + self.server4.state + "......\n..." + self.server5.state + ".........." + self.server6.sate + "............\n......" + self.server7.state + "..........." + self.server8.state + "........\n.........................." + self.server9.state + "\n...........................\n...........................\n.." + self.server10.state + "..........." + self.server11.state + self.server12.state + "...........\n............" + self.server13.state + "........" + self.server14.state + "...." + self.server15.state + "\n"
+        return area
