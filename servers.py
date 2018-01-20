@@ -14,10 +14,8 @@ Description: Servers class initializes a list of servers
 
 class Servers:
 
-    def __init__(self, server_id, player_1_id, player_2_id):
+    def __init__(self, server_id):
         self.server_id = server_id
-        self.player_1_id = player_1_id
-        self.player_2_id = player_2_id
         # 0 being neutral, if belongs to a player then this value == player_id
         self.owner = 0
         # 0 being up, otherwise represents the remaining days being down.
@@ -32,3 +30,13 @@ class Servers:
 
     def get_availability(self):
         return self.down
+
+    def server_update(self):
+        if self.down > 0:
+            self.down -= 1
+
+    def takeover(self, player_id):
+        self.owner = player_id
+
+    def add_downtime(self, days):
+        self.down = days
