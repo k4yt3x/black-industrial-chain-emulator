@@ -14,11 +14,10 @@ Description: Servers class initializes a list of servers
 
 class Servers:
 
-    def __init__(self, server_id, player_1_id, player_2_id, server_state):
+    def __init__(self, server_id, server_state):
         self.server_id = server_id
-        self.player_1_id = player_1_id
-        self.player_2_id = player_2_id
         self.state = server_state
+        self.owner = 0
 
     def get_id(self):
         return self.server_id

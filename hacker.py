@@ -20,25 +20,6 @@ class Hacker:
         self.money = 5000
         self.busy = 0  # if equals 0 then hacker can make a move
 
-    class exploit:
-
-        def zero_day(level):
-            # The ultimate attack that will compromise a server
-            # immediately at a high cost of money
-            return level
-
-        def nmap_scan(level):
-            print("Doing nmap scan")
-            return level
-
-        def sql_injection(level):
-            self.hacker.busy += level
-            return level
-
-        def smb(level):
-            # If the smb port is open
-            return level
-
     def day_pass(self):
         if self.busy > 0:
             self.busy -= 1
