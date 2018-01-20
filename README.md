@@ -31,4 +31,20 @@ Once the hacker gets a certain amount of money out of the company in a limited t
 #### Security Managers:
 ~~~~
 If the security manager manages to prevent the hacker from stealing a certain amount of money within the limited time, security manager wins.
-~~~~
+~~~
+
+Day system - each hacker has one descision per day
+
+hacking difficulty 1-5
+
+hacker attributes:
+	Level - skill/hardware level, determines which hacker obtains the server when conflict hacks occur
+	money - amount of money, generated each turn depending on how many servers owned
+	
+
+Server attributes:
+	Status - neutral or hacked
+	int down - down for how many days
+	Security level - determines the difficulty to hack
+
+
