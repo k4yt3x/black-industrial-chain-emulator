@@ -169,8 +169,8 @@ def start_hosting():
     initialize_sockets()
     socket_daemon()
 
-
 if __name__ == '__main__':
+    exit(0)
     try:
         start_hosting()
     except Exception:
