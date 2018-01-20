@@ -14,7 +14,7 @@ for hackers.
 
 from servers import Servers
 from hacker import Hacker
-# from map import Map
+# from worldmap import Map
 # from manager import Manager
 
 
