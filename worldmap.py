@@ -14,7 +14,7 @@ Description: displays the current map
 """
 
 
-class asciiMap():
+class Worldmap():
 
     neutral = "N"
     hostile = "X"
