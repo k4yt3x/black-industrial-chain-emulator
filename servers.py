@@ -5,6 +5,8 @@ Dev: K4YT3X IZAYOI
 Date Created: 1/20/2018
 Last Modified: 1/20/2018
 
+Dev: Thai
+Last Modified: 1/20/2018
 
 Description: Servers class initializes a list of servers
 """
@@ -16,12 +18,17 @@ class Servers:
         self.server_id = server_id
         self.player_1_id = player_1_id
         self.player_2_id = player_2_id
+        # 0 being neutral, if belongs to a player then this value == player_id
+        self.owner = 0
+        # 0 being up, otherwise represents the remaining days being down.
+        # This value should decrement everyday if self.down != 0
+        self.down = 0
 
-    def server_id(self):
-        return self.id
+    def get_id(self):
+        return self.server_id
 
-    def server_status(self):
-        return self.player
+    def server_owner(self):
+        return self.owner
 
-    def DDoS(self):
-        return self.days 
+    def get_availability(self):
+        return self.down
