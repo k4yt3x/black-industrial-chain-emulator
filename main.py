@@ -15,7 +15,9 @@ for hackers.
 from servers import Servers
 from hacker import Hacker
 from worldmap import Worldmap
+from exploits import Exploit
 # from manager import Manager
+import multiprocessing
 import socket
 import time
 import traceback
@@ -34,6 +36,9 @@ class new_session:
         self.player_2_id = player_2_id
         self.player_1_socket = player_1_socket
         self.player_2_socket = False
+        self.player_1_action = False
+        self.player_2_action = False
+        self.exploit = Exploit()
         self.setup_session()
         while True:
             if self.player_2_socket:
@@ -57,13 +62,42 @@ class new_session:
             self.servers.append(Servers(srv))
         self.wmap = Worldmap(self.servers)
 
+    def listen_for_actions(self, sock_obj):
+        return sock_obj.recv(1024).decode('utf-8')
+
     def await_player_actions(self):
         """ Takes user actions
 
         This method awaits for a user input from the web
         client and make changes to the world accordingly
         """
+        listening_session = []
+        p1 = multiprocessing.Process(target=self.listen_for_actions, args=(self.player_1_socket,))
+        p2 = multiprocessing.Process(target=self.listen_for_actions, args=(self.player_2_socket,))
+        listening_session.append(p1)
+        listening_session.append(p2)
+        p1.start()
+        p2.start()
         pass
+
+    def process_player_actions(self):
+        """ Apply actions into database
+
+        This method processes the action and change the server
+        data/player data according to the user action.
+        """
+        if self.exploit == 0:
+            print('zero_day')
+        elif self.exploit == 1:
+            print('nmap_scan')
+        elif self.exploit == 2:
+            print('sqlmap')
+        elif self.exploit == 3:
+            print('eternal_blue')
+        elif self.exploit == 4:
+            print()
+        elif self.exploit == 5:
+            print()
 
     def game_start(self):
         """ Starts the game
@@ -115,7 +149,7 @@ def start_hosting():
         sock0 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock0.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         sock0.bind(('0.0.0.0', 4444))
-        sock0.listen(10)
+        sock0.listen(4)
 
     def socket_daemon():
         """
