@@ -16,17 +16,39 @@ from servers import Servers
 from hacker import Hacker
 from worldmap import Worldmap
 # from manager import Manager
+import socket
+import time
+import traceback
 
 TIME_LIMIT = 30
+GAME_SESSIONS = []
+ONLINE_PLAYERS = []
+player_id = 0
 
 
 class new_session:
 
-    def __init__(self, player_1_id, player_2_id):
+    def __init__(self, player_1_id, player_2_id, player_1_socket):
         self.player_1_id = player_1_id
         self.player_2_id = player_2_id
+        self.player_1_socket = player_1_socket
+        self.player_2_socket = False
+        self.setup_session()
+        while True:
+            if self.player_2_socket:
+                self.game_start()
+            else:
+                time.sleep(0.1)
 
     def setup_session(self):
+        """Creates instances
+
+        This method is called when the game is first started.
+        It will create instances for players, map generators
+        and servers.
+
+        15 servers instances will be created
+        """
         self.player_1 = Hacker()
         self.player_2 = Hacker()
         self.servers = []
@@ -34,11 +56,28 @@ class new_session:
             self.servers.append(Servers(srv))
         self.wmap = Worldmap(self.servers)
 
+    def await_player_actions(self):
+        """ Takes user actions
+
+        This method awaits for a user input from the web
+        client and make changes to the world accordingly
+        """
+        pass
+
     def game_start(self):
+        """ Starts the game
+
+        Loops for a certain amount of days, awaits
+        for user actions each day.
+        """
         for day in range(30):
+            self.await_player_actions()
             self.cycle_day()
 
     def cycle_day(self):
+        """
+        Decrement busy days by one everyday
+        """
         if self.player_1.busy > 0:
             self.player_1.busy -= 1
         if self.player_2.busy > 0:
@@ -46,7 +85,41 @@ class new_session:
 
 
 def start_hosting():
-    pass
+    """
+    This functions starts the game server.
+    It initializes the server socket and starts
+    listening on tcp/4444. For each 2 players, it
+    will start a new game.
+    """
+    def initialize_sockets():
+        """
+        Start listening to TCP stream
+        on tcp/4444
+
+        Using 4444 from metasploit
+        """
+        global sock0
+        sock0 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        sock0.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        sock0.bind(('0.0.0.0', 4444))
+        sock0.listen(10)
+
+    def socket_daemon():
+        """
+        Accepting new tcp connections and created sessions
+        """
+        global player_id
+        while True:
+            conn, (rip, rport) = sock0.accept()
+            if len(GAME_SESSIONS) == 0:
+                GAME_SESSIONS.append(new_session(player_id, player_id + 1, conn))
+                player_id += 1
+            else:
+                for game in GAME_SESSIONS:
+                    if game.player_2_id == player_id:
+                        game.player_2_socket = conn
+
+    initialize_sockets()
 
 
 if __name__ == '__main__':
