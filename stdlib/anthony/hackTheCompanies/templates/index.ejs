@@ -1,6 +1,22 @@
 <!DOCTYPE HTML>
 <html>
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script> 
+      function sendrequest() {
+        $.ajax({
+        type: "POST",
+        url: "/Users/anthony/Documents/uofthacks/uofthacks/hackbuttons.py",
+        dataType: "html"
+      }).done(function( o ) {
+        console.log("success");
+        console.log(o);
+      }).fail(function(o){
+        console.log("error");
+      });
+      ;
+    }
+      </script>
     <title>My StdLib Static Site</title>
     <link href="./static/style.css" rel="stylesheet">
     <script src="./static/script.js"></script>
@@ -9,6 +25,7 @@
     <h1>My StdLib Static Website</h1>
     <div>
       <img src="./static/images/stdlib-logo.png">
+      <button type="button" onclick="sendrequest()">Click Me!</button> 
     </div>
     <p>
       Welcome to your StdLib Static Website!
