@@ -1,11 +1,16 @@
 [![Join the chat at https://gitter.im/K4YT3X-DEV/SCUTUM](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/K4YT3X-DEV/SCUTUM?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![status](https://travis-ci.org/K4YT3X/SCUTUM.svg)](https://travis-ci.org/K4YT3X/SCUTUM)
 
+
+![logo_with_path](https://user-images.githubusercontent.com/21986859/35191084-e3c27724-fe3f-11e7-94c2-9584635bfc3f.png)
+
 # Black Industrial Chain Emulator
 
 Black Industrial Chain Emulator (BICE) is an educational game designed to help company employees or ordinary people understand how the black industry works thus to make people be more aware about security and prevent low-level exploits from making damage to companies or individuals.
 
 This game have different modes. In the hacker vs. hacker mode, two or more players will play as hackers. They will try to phish, exploit or attack companies using various of methods and gain money from companies by selling information.
+
+<img width="843" alt="ui" src="https://user-images.githubusercontent.com/21986859/35191073-af913350-fe3f-11e7-981b-a250b533496c.png">
 
 In hacker vs. security manager mode, the player playing as security manager will learn how to patch common vulnerabilities and how to keep servers secure. They need to protect servers and assets safe from the players playing as hacker who will be trying to generate as much profit as possible by exploiting the company.
 
