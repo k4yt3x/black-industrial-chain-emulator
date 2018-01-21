@@ -4,7 +4,6 @@
 <div style="text-align:center">
 <img src="https://user-images.githubusercontent.com/21986859/35191084-e3c27724-fe3f-11e7-94c2-9584635bfc3f.png" width="600" height="600"></div>
 
-
 # Black Industrial Chain Emulator
 
 Black Industrial Chain Emulator (BICE) is an educational game designed to help company employees or ordinary people understand how the black industry works thus to make people be more aware about security and prevent low-level exploits from making damage to companies or individuals.
