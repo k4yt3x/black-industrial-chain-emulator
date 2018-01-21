@@ -3,11 +3,25 @@
 
 # Black Industrial Chain Emulator
 
-BICE is an educational game that helps people understand basic security challenges for companies and organizations.
+Black Industrial Chain Emulator (BICE) is an educational game designed to help company employees or ordnary people understand how the black industry works thus to make people be more aware about security and prevent low-level exploits from making damage to companies or individuals.
 
-In this game, players will play as a hacker or a security manager.
+This game have different modes. In the hacker vs. hacker mode, two or more players will play as hackers. They will try to phish, exploit or attack companies using various of methods and gain money from companies by selling infromation.
+
+In hacker vs. sercurity manager mode, the player playing as security manager will learn how to patch common vulnerabilities and how to keep servers secure. They need to protect servers and assets safe from the players playing as hacker who will be trying to generate as much profit as possible by exploiting the company.
+
+## How We Developed This Game
+
+We originally designed this game to be a traditional online multi-player game which uses UDP clients and UDP servers. However, inspired by **StdLib**'s flexibility and convenience, we created a **serverless** multi-player game with high modularity.
+
+During the development, we encountered issues with Ajax which was a key to the successful deployment of our service. We tried looking for solutions on Google, and we also tried asking mentors. Unfortunately, we weren't able to develop a solution for fixing Ajax due to the time constraint and the lack of front-end developing capability.
+
+However, we didn't stop there when we encountered obstacles. We continued on exploring more possibilities of improving our program within our range of capability. We looked into Unreal Engine 4 and Unity 5. Eventually, we were made a simple map demo rendering with Unity 5. We believe that we can finish this project with high-quality if we had more time.
+
+</br>
 
 ## How to Play
+
+#
 
 ### Hacker VS. Hacker
 
@@ -19,6 +33,7 @@ During the process, hackers can sabotage the competitor's servers so the competi
 
 	The goal of the two hackers is to loot a certain amount of money from company servers. Whoever reaches that value first will win the game.
 
+#
 ### Hacker VS. Company
 
 When you enter the main menu, you will select your role. You can either be a security manager or a black hat hacker. The goal of the hacker is to compromise as many servers as they can, and the job of the security manager is to prevent the servers from being hacked.
@@ -35,7 +50,7 @@ When a company server gets hacked, the hacker will profit from the data leaked f
 
 	If the security manager manages to prevent the hacker from stealing a certain amount of money within the limited time, security manager wins.
 
-Day system - each hacker has one descision per day
+Day system - each hacker has one chance to make a decision per day
 
 hacking difficulty 1-5
 
