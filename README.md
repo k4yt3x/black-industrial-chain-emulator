@@ -1,8 +1,8 @@
 [![Join the chat at https://gitter.im/K4YT3X-DEV/SCUTUM](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/K4YT3X-DEV/SCUTUM?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![status](https://travis-ci.org/K4YT3X/SCUTUM.svg)](https://travis-ci.org/K4YT3X/SCUTUM)
 
-
-![logo_with_path](https://user-images.githubusercontent.com/21986859/35191084-e3c27724-fe3f-11e7-94c2-9584635bfc3f.png)
+<center>
+<img src="https://user-images.githubusercontent.com/21986859/35191084-e3c27724-fe3f-11e7-94c2-9584635bfc3f.png" width="600" height="600"></center>
 
 # Black Industrial Chain Emulator
 
