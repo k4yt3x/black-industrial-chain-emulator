@@ -1,9 +1,9 @@
 [![Join the chat at https://gitter.im/K4YT3X-DEV/SCUTUM](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/K4YT3X-DEV/SCUTUM?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![status](https://travis-ci.org/K4YT3X/SCUTUM.svg)](https://travis-ci.org/K4YT3X/SCUTUM)
 
-# Hack The Companies
+# Black Industrial Chain Emulator
 
-HTC is an educational game that helps people understand basic security challenges for companies and organizations.
+BICE is an educational game that helps people understand basic security challenges for companies and organizations.
 
 In this game, players will play as a hacker or a security manager.
 
