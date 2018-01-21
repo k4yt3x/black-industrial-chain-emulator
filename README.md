@@ -3,15 +3,15 @@
 
 # Black Industrial Chain Emulator
 
-Black Industrial Chain Emulator (BICE) is an educational game designed to help company employees or ordnary people understand how the black industry works thus to make people be more aware about security and prevent low-level exploits from making damage to companies or individuals.
+Black Industrial Chain Emulator (BICE) is an educational game designed to help company employees or ordinary people understand how the black industry works thus to make people be more aware about security and prevent low-level exploits from making damage to companies or individuals.
 
-This game have different modes. In the hacker vs. hacker mode, two or more players will play as hackers. They will try to phish, exploit or attack companies using various of methods and gain money from companies by selling infromation.
+This game have different modes. In the hacker vs. hacker mode, two or more players will play as hackers. They will try to phish, exploit or attack companies using various of methods and gain money from companies by selling information.
 
-In hacker vs. sercurity manager mode, the player playing as security manager will learn how to patch common vulnerabilities and how to keep servers secure. They need to protect servers and assets safe from the players playing as hacker who will be trying to generate as much profit as possible by exploiting the company.
+In hacker vs. security manager mode, the player playing as security manager will learn how to patch common vulnerabilities and how to keep servers secure. They need to protect servers and assets safe from the players playing as hacker who will be trying to generate as much profit as possible by exploiting the company.
 
 ## How We Developed This Game
 
-We originally designed this game to be a traditional online multi-player game which uses UDP clients and UDP servers. However, inspired by **StdLib**'s flexibility and convenience, we created a **serverless** multi-player game with high modularity.
+We originally designed this game to be a traditional online multiplayer game which uses UDP clients and UDP servers. However, inspired by **StdLib**'s flexibility and convenience, we created a **serverless** multiplayer game with high modularity.
 
 During the development, we encountered issues with Ajax which was a key to the successful deployment of our service. We tried looking for solutions on Google, and we also tried asking mentors. Unfortunately, we weren't able to develop a solution for fixing Ajax due to the time constraint and the lack of front-end developing capability.
 
@@ -42,7 +42,7 @@ When a company server gets hacked, the hacker will profit from the data leaked f
 
 ### Winning Conditions
 
-#### Hackers:
+#### Hackers
 
 	Once the hacker gets a certain amount of money out of the company in a limited time, the hacker wins.
 
